@@ -1,0 +1,143 @@
+@use "../abstracts/" as *;
+
+/* button 
+--------------------------------------------------*/
+
+.sc-button {
+  display: inline-block;
+  background-color: $main-color;
+  box-sizing: border-box;
+  padding: 15px 18.5px;
+  border-radius: 10px;
+  @include transition3;
+  span {
+    color: $color-1;
+    font-weight: 700;
+    font-size: 15px;
+    position: relative;
+    // text-transform    : capitalize;
+    @include transition3;
+  }
+  i {
+    @include transition3;
+  }
+  &:hover,
+  &.active {
+    border-color: transparent;
+    outline: 0 none;
+    background-color: $color-2;
+    svg {
+      animation: 0.3s link-icon2 linear;
+    }
+  }
+  &.style-2:hover {
+    background-color: $main-color !important;
+  }
+  &.light {
+    background-color: $color-1;
+    span {
+      color: $main-color;
+    }
+  }
+  &.light:hover,
+  &.light.active {
+    background-color: $color-1;
+  }
+  &.light-2 {
+    background-color: $color-1;
+    span {
+      color: $main-color;
+    }
+  }
+  &.light-2:hover,
+  &.light-2.active {
+    background-color: $color-2;
+  }
+  svg {
+    margin-right: 17px;
+    margin-left: unset;
+    @include rtl {
+      margin-left: 17px;
+      margin-right: unset;
+    }
+    path {
+      @include transition3;
+    }
+  }
+  &.btn-svg {
+    svg {
+      margin-right: 0;
+      @include rtl {
+        margin-left: unset;
+      }
+    }
+  }
+  &.btn-1 {
+    background-color: $assistant-color;
+    span {
+      color: #000;
+    }
+    &:hover,
+    &.active {
+      background-color: $color-3;
+      span {
+        color: $color-1;
+      }
+      svg {
+        animation: 0.3s link-icon2 linear;
+      }
+      svg,
+      path {
+        fill: $color-1;
+        stroke: $color-1;
+      }
+    }
+    &.one {
+      span {
+        color: $color-3;
+      }
+      &:hover {
+        span {
+          color: $color-1;
+        }
+      }
+    }
+  }
+  &.btn-2 {
+    svg {
+      margin-left: 10px;
+      margin-right: 0;
+    }
+    &:hover {
+      background-color: $color-3;
+      span {
+        color: $color-1;
+      }
+      svg path {
+        stroke: $color-1;
+      }
+    }
+  }
+  &.btn-icon {
+    span::before {
+      content: "";
+      width: 1px;
+      height: 22px;
+      background-color: rgba(255, 255, 255, 0.2);
+      margin-left: -11px;
+      position: absolute;
+      @include rtl {
+        margin-right: -11px;
+      }
+    }
+  }
+  &.btn-icon2 {
+    span::after {
+      content: "";
+      width: 1px;
+      height: 22px;
+      background-color: rgba(255, 255, 255, 0.2);
+      position: absolute;
+    }
+  }
+}

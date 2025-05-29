@@ -400,11 +400,6 @@
     alertBox();
   });
 
-  // Edit Code
-  // $('.option').on('click', function() {
-  //     $(this).toggleClass('selected');
-  // });
-
   // Sticky Sidebar
   const stickEl = $(".sticky-sidebar");
   const footer = $(".flat-sale-detail");

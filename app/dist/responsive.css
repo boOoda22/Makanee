@@ -1300,6 +1300,12 @@
   .title-inner.style {
     margin-bottom: 30px;
   }
+  .header-account {
+    margin-right: 30px;
+  }
+  [dir=rtl] .header-account {
+    margin-left: 30px;
+  }
   .header-account .flat-bt-top {
     display: none;
   }
@@ -2372,14 +2378,6 @@
   }
 }
 @media only screen and (max-width: 400px) {
-  .header-account {
-    margin-right: 37px;
-    margin-left: 7px;
-  }
-  [dir=rtl] .header-account {
-    margin-left: 37px;
-    margin-right: 7px;
-  }
   .flat-property-detail .wrap-property .box {
     display: block;
   }

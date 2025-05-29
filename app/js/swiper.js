@@ -586,29 +586,24 @@ var swiper2 = new Swiper(".thumbs-swiper-column", {
 // Change dir
 $(document).ready(function () {
   const lang = localStorage.getItem("lang");
+
   if (lang === "ar" || (!lang && $("html").attr("dir") === "rtl")) {
-    $("html").attr("dir", "rtl");
-    $(".cart-count").hide();
-    $('.cart-count:contains("EN")').show(); // Show Arabic
+    $("html").attr("dir", "rtl").attr("lang", "ar").attr("xml:lang", "ar");
+    console.log("Arabic (RTL)");
   } else {
-    $("html").removeAttr("dir");
-    $(".cart-count").hide();
-    $('.cart-count:contains("AR")').show(); // Show English
+    $("html").attr("dir", "ltr").attr("lang", "en").attr("xml:lang", "en");
+    console.log("English (LTR)");
   }
 
-  $("#cart-icon").on("click", function (event) {
+  $("#switch-btn").on("click", function (event) {
     event.preventDefault();
 
     if ($("html").attr("dir") === "rtl") {
-      $("html").removeAttr("dir");
-      localStorage.setItem("lang", "en"); // Store preference
-      $(".cart-count").hide();
-      $('.cart-count:contains("AR")').show();
+      $("html").attr("dir", "ltr").attr("lang", "en").attr("xml:lang", "en");
+      localStorage.setItem("lang", "en");
     } else {
-      $("html").attr("dir", "rtl");
-      localStorage.setItem("lang", "ar"); // Store preference
-      $(".cart-count").hide();
-      $('.cart-count:contains("EN")').show();
+      $("html").attr("dir", "rtl").attr("lang", "ar").attr("xml:lang", "ar");
+      localStorage.setItem("lang", "ar");
     }
   });
 });
